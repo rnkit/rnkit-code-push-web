@@ -22,8 +22,8 @@
 </template>
 
 <script>
-  import BarChart from '../chart/barChart';
-  import DoughnutChart from '../chart/doughnutChart';
+  import BarChart from '../../../chart/barChart';
+  import DoughnutChart from '../../../chart/doughnutChart';
 
   export default {
     name: 'monitor',

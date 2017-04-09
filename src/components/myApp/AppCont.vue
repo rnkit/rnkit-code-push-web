@@ -5,7 +5,7 @@
         <div class="app-info">
           <!--app图标-->
           <img v-if="appInfo.icon" class="app-logo" :src="appInfo.icon" alt="app-logo">
-          <img v-else class="app-logo" src="../assets/applogo-default.png" alt="app-logo">
+          <img v-else class="app-logo" src="../../assets/applogo-default.png" alt="app-logo">
           <!--app所属平台-->
           <p v-if="appInfo.platform === 1" class="platform"><i class="fa fa-apple"></i>iOS</p>
           <p v-if="appInfo.platform === 2" class="platform"><i class="fa fa-android"></i>Android</p>
@@ -16,18 +16,48 @@
           <p class="app-identifier">应用包名：{{appInfo.app_identifier}}</p>
         </div>
         <div class="nav">
-          <router-link class="nav-item" :to="{name: 'patch'}">
-            <span>补丁下发</span>
-            <i class="el-icon-arrow-right"></i>
-          </router-link>
-          <router-link class="nav-item" :to="{name: 'monitor'}">
-            <span>实时监控</span>
-            <i class="el-icon-arrow-right"></i>
-          </router-link>
           <router-link class="nav-item" :to="{name: 'appInfo'}">
             <span>App信息</span>
             <i class="el-icon-arrow-right"></i>
           </router-link>
+          <template v-if="$route.params.type === 'hotUpdate'">
+            <router-link class="nav-item" :to="{name: 'patch'}">
+              <span>补丁下发</span>
+              <i class="el-icon-arrow-right"></i>
+            </router-link>
+            <router-link class="nav-item" :to="{name: 'monitor'}">
+              <span>实时监控</span>
+              <i class="el-icon-arrow-right"></i>
+            </router-link>
+            <router-link class="nav-item" :to="{name: 'userManage'}">
+              <span>用户管理</span>
+              <i class="el-icon-arrow-right"></i>
+            </router-link>
+          </template>
+          <template v-else-if="$route.params.type === 'distribute'">
+            <router-link class="nav-item" :to="{name: 'setAppInfo'}">
+              <span>应用上传</span>
+              <i class="el-icon-arrow-right"></i>
+            </router-link>
+            <router-link class="nav-item" :to="{name: 'manage'}">
+              <span>应用管理</span>
+              <i class="el-icon-arrow-right"></i>
+            </router-link>
+            <router-link class="nav-item" :to="{name: 'udid'}">
+              <span>UDID</span>
+              <i class="el-icon-arrow-right"></i>
+            </router-link>
+            <router-link class="nav-item" :to="{name: 'userManage'}">
+              <span>用户管理</span>
+              <i class="el-icon-arrow-right"></i>
+            </router-link>
+          </template>
+          <template v-else>
+            <router-link class="nav-item" :to="{name: 'statistics'}">
+              <span>流量统计</span>
+              <i class="el-icon-arrow-right"></i>
+            </router-link>
+          </template>
         </div>
       </div>
       <div class="grid-content">
@@ -42,6 +72,9 @@
 
   export default {
     name: 'appCont',
+    props: {
+      items: Object,
+    },
     data() {
       return {
         app_key: this.$route.params.key,  // 从路由中获取app的key，创建app的时候会生成一个唯一的key值
@@ -130,9 +163,14 @@
     text-decoration: none;
     color: #2c3e50;
   }
-  .nav-item.router-link-active,
-  .nav-item:hover{
+  .nav-item.router-link-active{
     background-color: #20A0FF;
+    /*background-color: #1F2D3D;*/
+    color: #fff;
+  }
+  .nav-item:hover{
+    background-color: #58B7FF;
+    /*background-color: #8492A6;*/
     color: #fff;
   }
 </style>

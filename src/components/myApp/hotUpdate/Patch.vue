@@ -9,7 +9,7 @@
       <div class="package-list">
         <template v-if="packageListArray.length === 0">
           <div class="empty">
-            <img class="empty-img" src="../assets/empty.png" alt="empty">
+            <img class="empty-img" src="../../../assets/empty.png" alt="empty">
             <p class="empty-text">点击右上角"+"按钮创建package</p>
           </div>
         </template>
@@ -72,7 +72,7 @@
       <div class="version-list">
         <template v-if="versionListArray.length === 0">
           <div class="empty">
-            <img class="empty-img" src="../assets/empty.png" alt="empty">
+            <img class="empty-img" src="../../../assets/empty.png" alt="empty">
             <p class="empty-text">点击右上角"+"按钮创建补丁</p>
           </div>
         </template>
@@ -246,7 +246,7 @@
   import { mapGetters } from 'vuex';
   import draggable from 'vuedraggable';
   import moment from 'moment';
-  import { packages as packageApi, version as versionApi } from '../api';
+  import { packages as packageApi, version as versionApi } from '../../../api';
 
   export default {
     name: 'drag',

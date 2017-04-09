@@ -4,7 +4,7 @@
       <el-card class="card" :body-style="{ padding: '0px' }">
         <!--app图标-->
         <img v-if="item.icon" class="logo" :src="item.icon" alt="app-logo">
-        <img v-else class="logo" src="../assets/applogo-default.png" alt="app-logo">
+        <img v-else class="logo" src="../../assets/applogo-default.png" alt="app-logo">
         <!--app所属平台-->
         <p v-if="item.platform === 1" class="platform"><i class="fa fa-apple"></i>iOS</p>
         <p v-if="item.platform === 2" class="platform"><i class="fa fa-android"></i>Android</p>
@@ -14,12 +14,12 @@
         <p class="app-version">App最新版本：{{item.app_version || ''}}</p>
         <!--应用包名-->
         <p class="app-identifier">应用包名：{{item.app_identifier}}</p>
-        <router-link :to="{name: 'patch', params: { key: item.key }}"><el-button class="button" size="small">管 理</el-button></router-link>
+        <router-link :to="{name: 'appCont', params: { key: item.key, type: 'hotUpdate' }}"><el-button class="button" size="small">管 理</el-button></router-link>
       </el-card>
     </template>
     <el-card class="card" :body-style="{ padding: '0px' }">
       <p class="icon-add">
-        <img src="../assets/add.png" alt="" width="80">
+        <img src="../../assets/add.png" alt="" width="80">
       </p>
       <el-button class="button" size="small" @click="addAppFormVisible = true">创建App</el-button>
     </el-card>

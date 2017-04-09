@@ -83,7 +83,8 @@
     top: 0;
     width: 100%;
     height: 54px;
-    background-image: linear-gradient(90deg, #0B4182 1%, #1e88e5 64%, #40BAF5 97%);
+    /*background-image: linear-gradient(90deg, #0B4182 1%, #1e88e5 64%, #40BAF5 97%);*/
+    background-color: #1F2D3D;
     z-index: 10;
   }
   .nav-content {
