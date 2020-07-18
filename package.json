@@ -11,7 +11,7 @@
   "dependencies": {
     "axios": "^0.15.3",
     "element-ui": "^1.1.6",
-    "jsoneditor": "5.5.11",
+    "jsoneditor": "7.2.0",
     "normalize.css": "^5.0.0",
     "vue": "^2.1.10",
     "vue-analytics": "^3.0.1",
