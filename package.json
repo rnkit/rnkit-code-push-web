@@ -9,7 +9,7 @@
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
-    "axios": "^0.15.3",
+    "axios": "^0.21.3",
     "element-ui": "^1.1.6",
     "jsoneditor": "5.5.11",
     "normalize.css": "^5.0.0",
